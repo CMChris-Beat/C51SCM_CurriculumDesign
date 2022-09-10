@@ -29,7 +29,6 @@ void Key1();
 void Key2();
 void Key3();
 void Key4();
-void send();
 short int detacte();
 void DA_OUTPUT(uint value);
 void delay18us();
@@ -37,13 +36,7 @@ uchar TLC549_Convert();
 
 void main() {
 	short int old_status, status = -1;
-	TMOD = 0x21;
-	SCON = 0x40;
-	PCON = 0x00;
-	TH1 = 0xfd;
-	TL1 = 0xfd;
-	TR1 = 1;
-
+	TMOD = 0x01;
 	TH0 = 0xee;
 	TL0 = 0x00;
 	EA = 1;
@@ -84,7 +77,7 @@ void delay18us() {
 }
 
 short int detacte() {
-	P1 = 0xff;
+	P2 = 0xf0;
 	if ((short int)K1 + (short int)K2 + (short int)K3 + (short int)K4 != 3) return -1;
 	if (K1 == 0) return 0;
 	else if (K2 == 0) return 1;
