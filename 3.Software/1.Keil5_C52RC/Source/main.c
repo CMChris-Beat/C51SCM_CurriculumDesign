@@ -1,6 +1,6 @@
 #include <reg51.h>
-#include<intrins.h>
-#define uchar unsigned char
+#include <intrins.h>
+#define uchar unsigned char	
 #define uint unsigned int
 #define TIME 26
 #define RES 10000
